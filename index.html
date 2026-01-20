@@ -132,7 +132,7 @@ Získáváš &#39;&#39;100 Kč&#39;&#39;.
 [[Další zákazník-&gt;Zakaznik2]]</tw-passagedata><tw-passagedata pid="6" name="Spatne1" tags="" position="650,25" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
 
 ✖ &#39;&#39;Špatně.&#39;&#39;  
-Správná odpověď byla &#39;&#39;disk&#39;&#39; — málo místa pro soubory.
+Problém byl &#39;&#39;disk&#39;&#39; — není dost místa pro data (úložiště je plné / malé).
 
 Ztrácíš &#39;&#39;1 život&#39;&#39;.
 
@@ -142,7 +142,7 @@ Ztrácíš &#39;&#39;1 život&#39;&#39;.
   [[Další zákazník-&gt;Zakaznik2]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="Zakaznik2" tags="" position="775,25" size="100,100">Přichází další zákazník:
 
-&gt; „Počítač se mi &#39;&#39;sám vypíná&#39;&#39;, hlavně když hraju hry.“
+&gt; „Počítač se při hraní náhle vypne bez chybové hlášky.“
 
 Co je nejpravděpodobnější problém?
 
@@ -155,14 +155,14 @@ Co je nejpravděpodobnější problém?
 * [[Motherboard-&gt;Spatne2]]</tw-passagedata><tw-passagedata pid="8" name="Spravne2" tags="" position="900,25" size="100,100">&lt;&lt;set $penize += 150&gt;&gt;
 
 ✔ &#39;&#39;Správně!&#39;&#39;  
-Na vině je &#39;&#39;zdroj&#39;&#39; — nezvládá zátěž (ochrany/shutdown pod loadem).
+Problém byl zdroj — při zátěži nezvládá dodávat dostatek energie a PC se proto náhle vypíná.
 
 Získáváš &#39;&#39;150 Kč&#39;&#39;.
 
 [[Další zákazník-&gt;Zakaznik3]]</tw-passagedata><tw-passagedata pid="9" name="Spatne2" tags="" position="1025,25" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
 
 ✖ &#39;&#39;Špatně.&#39;&#39;  
-Správná odpověď byl &#39;&#39;zdroj&#39;&#39;.
+Problém byl zdroj — při zátěži nezvládá dodávat dostatek energie a PC se proto náhle vypíná.
 
 Ztrácíš &#39;&#39;1 život&#39;&#39;.
 
@@ -185,44 +185,14 @@ Co je nejpravděpodobnější příčina?
 * [[Chlazení-&gt;Spatne3]]</tw-passagedata><tw-passagedata pid="11" name="Spravne3" tags="" position="25,150" size="100,100">&lt;&lt;set $penize += 200&gt;&gt;
 
 ✔ &#39;&#39;Správně!&#39;&#39;  
-Je to &#39;&#39;RAM&#39;&#39; — při nedostatku paměti systém odkládá data na disk (swap) a vše se výrazně zpomalí.
+Problém byla RAM — nedostatek paměti nutí systém používat disk místo RAM, což výrazně zpomaluje běh.
 
 Získáváš &#39;&#39;200 Kč&#39;&#39;.
 
-[[Další zákazník-&gt;Zakaznik4]]</tw-passagedata><tw-passagedata pid="12" name="Spatne3" tags="" position="150,150" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
+[[Další zákazník-&gt;Zakaznik5]]</tw-passagedata><tw-passagedata pid="12" name="Spatne3" tags="" position="150,150" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
 
 ✖ &#39;&#39;Špatně.&#39;&#39;  
-Správná odpověď byla &#39;&#39;RAM&#39;&#39; — málo operační paměti způsobuje swapování a lagy.
-
-Ztrácíš &#39;&#39;1 život&#39;&#39;.
-
-&lt;&lt;if $zivoty &lt;= 0&gt;&gt;
-  [[Pokračovat-&gt;Prohra]]
-&lt;&lt;else&gt;&gt;
-  [[Další zákazník-&gt;Zakaznik4]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="Zakaznik4" tags="" position="275,150" size="100,100">Přijde zákazník se stolním PC:
-
-&gt; „Když zapnu počítač, &#39;&#39;rozsvítí se větráky&#39;&#39;, ale na monitoru nic. Občas to párkrát pípne.“
-
-Nejčastější viník v takové situaci (pro běžný servisní případ) je:
-
-* [[CPU-&gt;Spatne4]]
-* [[Grafická karta-&gt;Spravne4]]
-* [[Disk-&gt;Spatne4]]
-* [[RAM-&gt;Spatne4]]
-* [[Motherboard-&gt;Spatne4]]
-* [[Zdroj-&gt;Spatne4]]
-* [[Chlazení-&gt;Spatne4]]</tw-passagedata><tw-passagedata pid="14" name="Spravne4" tags="" position="400,150" size="100,100">&lt;&lt;set $penize += 250&gt;&gt;
-
-✔ &#39;&#39;Správně!&#39;&#39;  
-Často jde o &#39;&#39;grafickou kartu&#39;&#39; (neusazená karta, problém s výstupem, případně napájení GPU). Obraz nejde, ale PC „nějak“ běží.
-
-Získáváš &#39;&#39;250 Kč&#39;&#39;.
-
-[[Další zákazník-&gt;Zakaznik5]]</tw-passagedata><tw-passagedata pid="15" name="Spatne4" tags="" position="525,150" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
-
-✖ &#39;&#39;Špatně.&#39;&#39;  
-Nejpravděpodobnější odpověď tady byla &#39;&#39;grafická karta&#39;&#39; (typický „no display“ scénář).
+Problém byla RAM — nedostatek paměti nutí systém používat disk místo RAM, což výrazně zpomaluje běh.
 
 Ztrácíš &#39;&#39;1 život&#39;&#39;.
 
@@ -230,7 +200,7 @@ Ztrácíš &#39;&#39;1 život&#39;&#39;.
   [[Pokračovat-&gt;Prohra]]
 &lt;&lt;else&gt;&gt;
   [[Další zákazník-&gt;Zakaznik5]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Zakaznik5" tags="" position="650,150" size="100,100">Zákazník přinese PC s poznámkou:
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="Zakaznik5" tags="" position="650,150" size="100,100">Zákazník přinese PC s poznámkou:
 
 &gt; „Po pěti minutách hraní to začne &#39;&#39;pálit&#39;&#39; a pak se to začne &#39;&#39;throttlovat&#39;&#39; — FPS spadne a je to horké jak kamna.“
 
@@ -242,17 +212,17 @@ Co je nejpravděpodobnější problém?
 * [[RAM-&gt;Spatne5]]
 * [[Motherboard-&gt;Spatne5]]
 * [[Zdroj-&gt;Spatne5]]
-* [[Chlazení-&gt;Spravne5]]</tw-passagedata><tw-passagedata pid="17" name="Spravne5" tags="" position="775,150" size="100,100">&lt;&lt;set $penize += 300&gt;&gt;
+* [[Chlazení-&gt;Spravne5]]</tw-passagedata><tw-passagedata pid="14" name="Spravne5" tags="" position="775,150" size="100,100">&lt;&lt;set $penize += 300&gt;&gt;
 
 ✔ &#39;&#39;Správně!&#39;&#39;  
-Problém je &#39;&#39;chlazení&#39;&#39; — přehřívání vede k throttlingu (snížení výkonu), případně vypnutí pro ochranu.
+Problém bylo chlazení — přehřívání spouští throttling, který snižuje výkon, aby se hardware nepoškodil.
 
 Získáváš &#39;&#39;300 Kč&#39;&#39;.
 
-[[Další zákazník-&gt;Zakaznik6]]</tw-passagedata><tw-passagedata pid="18" name="Spatne5" tags="" position="900,150" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
+[[Další zákazník-&gt;Zakaznik6]]</tw-passagedata><tw-passagedata pid="15" name="Spatne5" tags="" position="900,150" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
 
 ✖ &#39;&#39;Špatně.&#39;&#39;  
-Správná odpověď byla &#39;&#39;chlazení&#39;&#39; — přehřívání způsobuje throttling a propady výkonu.
+Problém bylo chlazení — přehřívání spouští throttling, který snižuje výkon, aby se hardware nepoškodil.
 
 Ztrácíš &#39;&#39;1 život&#39;&#39;.
 
@@ -260,7 +230,7 @@ Ztrácíš &#39;&#39;1 život&#39;&#39;.
   [[Pokračovat-&gt;Prohra]]
 &lt;&lt;else&gt;&gt;
   [[Další zákazník-&gt;Zakaznik6]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="Zakaznik6" tags="" position="1025,150" size="100,100">Přichází zákazník s PC, který se vůbec nerozjede:
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Zakaznik6" tags="" position="1025,150" size="100,100">Přichází zákazník s PC, který se vůbec nerozjede:
 
 &gt; „Zmáčknu power a &#39;&#39;nic&#39;&#39;. Žádné větráky, žádné světýlko. Zkoušel jsem jinou zásuvku.“
 
@@ -272,17 +242,17 @@ Co je nejpravděpodobnější?
 * [[RAM-&gt;Spatne6]]
 * [[Motherboard-&gt;Spatne6]]
 * [[Zdroj-&gt;Spravne6]]
-* [[Chlazení-&gt;Spatne6]]</tw-passagedata><tw-passagedata pid="20" name="Spravne6" tags="" position="1150,150" size="100,100">&lt;&lt;set $penize += 350&gt;&gt;
+* [[Chlazení-&gt;Spatne6]]</tw-passagedata><tw-passagedata pid="17" name="Spravne6" tags="" position="1150,150" size="100,100">&lt;&lt;set $penize += 350&gt;&gt;
 
 ✔ &#39;&#39;Správně!&#39;&#39;  
-Typicky je to &#39;&#39;zdroj&#39;&#39; (mrtvý PSU / ochrany / kabeláž). Bez napájení se PC vůbec neprojeví.
+Problém byl zdroj — počítač vůbec nedostává napájení, proto se žádná součástka nerozeběhne.
 
 Získáváš &#39;&#39;350 Kč&#39;&#39;.
 
-[[Další zákazník-&gt;Zakaznik7]]</tw-passagedata><tw-passagedata pid="21" name="Spatne6" tags="" position="25,275" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
+[[Další zákazník-&gt;Zakaznik7]]</tw-passagedata><tw-passagedata pid="18" name="Spatne6" tags="" position="25,275" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
 
 ✖ &#39;&#39;Špatně.&#39;&#39;  
-Nejpravděpodobnější odpověď byl &#39;&#39;zdroj&#39;&#39; — když se neroztočí ani větráky, často nejde napájení.
+Problém byl zdroj — počítač vůbec nedostává napájení, proto se žádná součástka nerozeběhne.
 
 Ztrácíš &#39;&#39;1 život&#39;&#39;.
 
@@ -290,7 +260,7 @@ Ztrácíš &#39;&#39;1 život&#39;&#39;.
   [[Pokračovat-&gt;Prohra]]
 &lt;&lt;else&gt;&gt;
   [[Další zákazník-&gt;Zakaznik7]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="Zakaznik7" tags="" position="150,275" size="100,100">Poslední zákazník dne přiběhne s PC:
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="Zakaznik7" tags="" position="150,275" size="100,100">Poslední zákazník dne přiběhne s PC:
 
 &gt; „Počítač se zapne, ale &#39;&#39;nenajde systém&#39;&#39;. Někdy píše, že není bootovací zařízení.“
 
@@ -302,17 +272,17 @@ Co je nejpravděpodobnější?
 * [[RAM-&gt;Spatne7]]
 * [[Motherboard-&gt;Spatne7]]
 * [[Zdroj-&gt;Spatne7]]
-* [[Chlazení-&gt;Spatne7]]</tw-passagedata><tw-passagedata pid="23" name="Spravne7" tags="" position="275,275" size="100,100">&lt;&lt;set $penize += 450&gt;&gt;
+* [[Chlazení-&gt;Spatne7]]</tw-passagedata><tw-passagedata pid="20" name="Spravne7" tags="" position="275,275" size="100,100">&lt;&lt;set $penize += 450&gt;&gt;
 
 ✔ &#39;&#39;Správně!&#39;&#39;  
-Problém je &#39;&#39;disk&#39;&#39; (úložiště) — systém se nenačte, protože disk není detekován, je poškozený, nebo má špatný boot.
+Problém byl disk — BIOS nenachází úložiště se systémem, ze kterého by mohl bootovat.
 
 Získáváš &#39;&#39;450 Kč&#39;&#39;.
 
-[[Další zákazník-&gt;Zakaznik8]]</tw-passagedata><tw-passagedata pid="24" name="Spatne7" tags="" position="400,275" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
+[[Další zákazník-&gt;Zakaznik8]]</tw-passagedata><tw-passagedata pid="21" name="Spatne7" tags="" position="400,275" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
 
 ✖ &#39;&#39;Špatně.&#39;&#39;  
-Správná odpověď byl &#39;&#39;disk&#39;&#39; — typický „no boot device / missing OS“ případ.
+Problém byl disk — BIOS nenachází úložiště se systémem, ze kterého by mohl bootovat.
 
 Ztrácíš &#39;&#39;1 život&#39;&#39;.
 
@@ -320,7 +290,7 @@ Ztrácíš &#39;&#39;1 život&#39;&#39;.
   [[Pokračovat-&gt;Prohra]]
 &lt;&lt;else&gt;&gt;
   [[Další zákazník-&gt;Zakaznik8]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="Vyhra" tags="" position="525,275" size="100,100">🎉 &#39;&#39;Gratulace!&#39;&#39;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="Vyhra" tags="" position="525,275" size="100,100">🎉 &#39;&#39;Gratulace!&#39;&#39;
 
 Tvůj obchůdek má skvělou pověst. Umíš diagnostikovat rychle, zákazníci se vrací a ty rozjíždíš druhou pobočku.
 
@@ -330,13 +300,13 @@ Závěrečný stav:
 
 &#39;&#39;Z malého servisáka je IT milionář.&#39;&#39;
 
-[[Hrát znovu-&gt;Restart]]</tw-passagedata><tw-passagedata pid="26" name="Prohra" tags="" position="650,275" size="100,100">💀 &#39;&#39;Bankrot&#39;&#39;
+[[Hrát znovu-&gt;Restart]]</tw-passagedata><tw-passagedata pid="23" name="Prohra" tags="" position="650,275" size="100,100">💀 &#39;&#39;Bankrot&#39;&#39;
 
 Špatná diagnostika tě stála reputaci. Zákazníci odcházejí, účty se kupí a obchod zavíráš.
 
-[[Zkusit znovu-&gt;Restart]]</tw-passagedata><tw-passagedata pid="27" name="Restart" tags="" position="775,275" size="100,100">&lt;&lt;set $zivoty = 3&gt;&gt;
+[[Zkusit znovu-&gt;Restart]]</tw-passagedata><tw-passagedata pid="24" name="Restart" tags="" position="775,275" size="100,100">&lt;&lt;set $zivoty = 3&gt;&gt;
 &lt;&lt;set $penize = 0&gt;&gt;
-[[Zpět na začátek-&gt;Start]]</tw-passagedata><tw-passagedata pid="28" name="Zakaznik8" tags="" position="900,275" size="100,100">Přichází zákazník s PC, který se chová podivně:
+[[Zpět na začátek-&gt;Start]]</tw-passagedata><tw-passagedata pid="25" name="Zakaznik8" tags="" position="900,275" size="100,100">Přichází zákazník s PC, který se chová podivně:
 
 &gt; „Počítač se zapne, ale &#39;&#39;je extrémně pomalý hned po startu&#39;&#39;. Vytížení procesoru je pořád na 100 %, i když nic nedělám.“
 
@@ -348,47 +318,17 @@ Co je nejpravděpodobnější příčina?
 * [[RAM-&gt;Spatne8]]
 * [[Motherboard-&gt;Spatne8]]
 * [[Zdroj-&gt;Spatne8]]
-* [[Chlazení-&gt;Spatne8]]</tw-passagedata><tw-passagedata pid="29" name="Spravne8" tags="" position="1025,275" size="100,100">&lt;&lt;set $penize += 550&gt;&gt;
+* [[Chlazení-&gt;Spatne8]]</tw-passagedata><tw-passagedata pid="26" name="Spravne8" tags="" position="1025,275" size="100,100">&lt;&lt;set $penize += 550&gt;&gt;
 
 ✔ &#39;&#39;Správně!&#39;&#39;  
-Problém je &#39;&#39;CPU&#39;&#39; — procesor je buď vadný, nebo trvale throttluje kvůli interním chybám.
+Problém byl CPU — procesor je neustále plně vytížený a nestíhá ani základní operace systému.
 
 Získáváš &#39;&#39;550 Kč&#39;&#39;.
 
-[[Další zákazník-&gt;Zakaznik9]]</tw-passagedata><tw-passagedata pid="30" name="Spatne8" tags="" position="1150,275" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
+[[Další zákazník-&gt;Zakaznik10]]</tw-passagedata><tw-passagedata pid="27" name="Spatne8" tags="" position="1150,275" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
 
 ✖ &#39;&#39;Špatně.&#39;&#39;  
-Správná odpověď byl &#39;&#39;CPU&#39;&#39; — trvale vysoké vytížení bez zátěže je typický procesorový problém.
-
-Ztrácíš &#39;&#39;1 život&#39;&#39;.
-
-&lt;&lt;if $zivoty &lt;= 0&gt;&gt;
-  [[Pokračovat-&gt;Prohra]]
-&lt;&lt;else&gt;&gt;
-  [[Další zákazník-&gt;Zakaznik9]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="Zakaznik9" tags="" position="25,400" size="100,100">Zákazník přináší PC po domácím upgradu:
-
-&gt; „Vyměnil jsem RAM a grafiku, ale teď se PC &#39;&#39;náhodně restartuje&#39;&#39;. Někdy ani nenaběhne BIOS.“
-
-Co je nejpravděpodobnější?
-
-* [[CPU-&gt;Spatne9]]
-* [[Grafická karta-&gt;Spatne9]]
-* [[Disk-&gt;Spatne9]]
-* [[RAM-&gt;Spatne9]]
-* [[Motherboard-&gt;Spravne9]]
-* [[Zdroj-&gt;Spatne9]]
-* [[Chlazení-&gt;Spatne9]]</tw-passagedata><tw-passagedata pid="32" name="Spravne9" tags="" position="150,400" size="100,100">&lt;&lt;set $penize += 650&gt;&gt;
-
-✔ &#39;&#39;Správně!&#39;&#39;  
-Na vině je &#39;&#39;motherboard&#39;&#39; — nekompatibilita, vadné sloty nebo BIOS po upgradu.
-
-Získáváš &#39;&#39;650 Kč&#39;&#39;.
-
-[[Další zákazník-&gt;Zakaznik10]]</tw-passagedata><tw-passagedata pid="33" name="Spatne9" tags="" position="275,400" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
-
-✖ &#39;&#39;Špatně.&#39;&#39;  
-Správná odpověď byla &#39;&#39;motherboard&#39;&#39; — problémy po upgradu často souvisí se základní deskou.
+Problém byl CPU — procesor je neustále plně vytížený a nestíhá ani základní operace systému.
 
 Ztrácíš &#39;&#39;1 život&#39;&#39;.
 
@@ -396,7 +336,7 @@ Ztrácíš &#39;&#39;1 život&#39;&#39;.
   [[Pokračovat-&gt;Prohra]]
 &lt;&lt;else&gt;&gt;
   [[Další zákazník-&gt;Zakaznik10]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="Zakaznik10" tags="" position="400,400" size="100,100">Další zákazník si stěžuje:
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="Zakaznik10" tags="" position="400,400" size="100,100">Další zákazník si stěžuje:
 
 &gt; „Po zapnutí se PC rozjede, ale &#39;&#39;zamrzne při načítání systému&#39;&#39;. Do BIOSu se dostanu.“
 
@@ -408,47 +348,17 @@ Co je nejpravděpodobnější problém?
 * [[RAM-&gt;Spatne10]]
 * [[Motherboard-&gt;Spatne10]]
 * [[Zdroj-&gt;Spatne10]]
-* [[Chlazení-&gt;Spatne10]]</tw-passagedata><tw-passagedata pid="35" name="Spravne10" tags="" position="525,400" size="100,100">&lt;&lt;set $penize += 750&gt;&gt;
+* [[Chlazení-&gt;Spatne10]]</tw-passagedata><tw-passagedata pid="29" name="Spravne10" tags="" position="525,400" size="100,100">&lt;&lt;set $penize += 750&gt;&gt;
 
 ✔ &#39;&#39;Správně!&#39;&#39;  
-Problém je &#39;&#39;disk&#39;&#39; — poškozený systém, špatné sektory nebo selhávající úložiště.
+Problém byl disk — BIOS funguje, ale systém se z úložiště nedokáže správně načíst.
 
 Získáváš &#39;&#39;750 Kč&#39;&#39;.
 
-[[Další zákazník-&gt;Zakaznik11]]</tw-passagedata><tw-passagedata pid="36" name="Spatne10" tags="" position="650,400" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
+[[Další zákazník-&gt;Zakaznik12]]</tw-passagedata><tw-passagedata pid="30" name="Spatne10" tags="" position="650,400" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
 
 ✖ &#39;&#39;Špatně.&#39;&#39;  
-Správná odpověď byl &#39;&#39;disk&#39;&#39; — BIOS naběhne, ale systém se nenačte.
-
-Ztrácíš &#39;&#39;1 život&#39;&#39;.
-
-&lt;&lt;if $zivoty &lt;= 0&gt;&gt;
-  [[Pokračovat-&gt;Prohra]]
-&lt;&lt;else&gt;&gt;
-  [[Další zákazník-&gt;Zakaznik11]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="Zakaznik11" tags="" position="775,400" size="100,100">Zákazník popisuje zvláštní chování:
-
-&gt; „Počítač funguje, ale &#39;&#39;občas se úplně kousne bez chyby&#39;&#39;. Žádný blue screen, prostě freeze.“
-
-Co je nejpravděpodobnější?
-
-* [[CPU-&gt;Spatne11]]
-* [[Grafická karta-&gt;Spatne11]]
-* [[Disk-&gt;Spatne11]]
-* [[RAM-&gt;Spatne11]]
-* [[Motherboard-&gt;Spravne11]]
-* [[Zdroj-&gt;Spatne11]]
-* [[Chlazení-&gt;Spatne11]]</tw-passagedata><tw-passagedata pid="38" name="Spravne11" tags="" position="900,400" size="100,100">&lt;&lt;set $penize += 900&gt;&gt;
-
-✔ &#39;&#39;Správně!&#39;&#39;  
-Jde o &#39;&#39;motherboard&#39;&#39; — nestabilní sběrnice, řadiče nebo mikropraskliny.
-
-Získáváš &#39;&#39;900 Kč&#39;&#39;.
-
-[[Další zákazník-&gt;Zakaznik12]]</tw-passagedata><tw-passagedata pid="39" name="Spatne11" tags="" position="1025,400" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
-
-✖ &#39;&#39;Špatně.&#39;&#39;  
-Správná odpověď byla &#39;&#39;motherboard&#39;&#39; — náhodné freeze bez chyb často ukazují na desku.
+Problém byl disk — BIOS funguje, ale systém se z úložiště nedokáže správně načíst.
 
 Ztrácíš &#39;&#39;1 život&#39;&#39;.
 
@@ -456,29 +366,30 @@ Ztrácíš &#39;&#39;1 život&#39;&#39;.
   [[Pokračovat-&gt;Prohra]]
 &lt;&lt;else&gt;&gt;
   [[Další zákazník-&gt;Zakaznik12]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="Zakaznik12" tags="" position="1150,400" size="100,100">Poslední zákazník dne vypadá zoufale:
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="Zakaznik12" tags="" position="1150,400" size="100,100">Poslední zákazník dne vypadá zoufale:
 
-&gt; „PC jede, ale &#39;&#39;výkon je hluboko pod očekáváním&#39;&#39;. Benchmarky jsou poloviční a CPU boostuje jen minimálně.“
+&gt; „Počítač se zapne, větráky i disky běží, zdroj je vyměněný a funkční, RAM i grafika jsou otestované v jiném počítači.
+PC ale náhodně ztrácí USB zařízení, někdy vůbec nenaběhne POST a BIOS občas hlásí chyby komunikace se sběrnicemi.“
 
 Co je příčina?
 
-* [[CPU-&gt;Spravne12]]
+* [[CPU-&gt;Spatne12]]
 * [[Grafická karta-&gt;Spatne12]]
 * [[Disk-&gt;Spatne12]]
 * [[RAM-&gt;Spatne12]]
-* [[Motherboard-&gt;Spatne12]]
+* [[Motherboard-&gt;Spravne12]]
 * [[Zdroj-&gt;Spatne12]]
-* [[Chlazení-&gt;Spatne12]]</tw-passagedata><tw-passagedata pid="41" name="Spravne12" tags="" position="25,525" size="100,100">&lt;&lt;set $penize += 1200&gt;&gt;
+* [[Chlazení-&gt;Spatne12]]</tw-passagedata><tw-passagedata pid="32" name="Spravne12" tags="" position="25,525" size="100,100">&lt;&lt;set $penize += 1200&gt;&gt;
 
 ✔ &#39;&#39;Správně!&#39;&#39;  
-Problém je &#39;&#39;CPU&#39;&#39; — vadný boost, degradace nebo špatné řízení napětí.
+Problém byl motherboard — chyby komunikace a nestabilní porty ukazují na selhání řídicí logiky základní desky. + to vypadá že všechno ostatní je otestováno a funguje
 
 Získáváš &#39;&#39;1200 Kč&#39;&#39;.
 
-[[Závěr-&gt;Vyhra]]</tw-passagedata><tw-passagedata pid="42" name="Spatne12" tags="" position="150,525" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
+[[Závěr-&gt;Vyhra]]</tw-passagedata><tw-passagedata pid="33" name="Spatne12" tags="" position="150,525" size="100,100">&lt;&lt;set $zivoty -= 1&gt;&gt;
 
 ✖ &#39;&#39;Špatně.&#39;&#39;  
-Správná odpověď byl &#39;&#39;CPU&#39;&#39; — nízký výkon bez jiných symptomů často znamená problém procesoru.
+Problém byl motherboard — chyby komunikace a nestabilní porty ukazují na selhání řídicí logiky základní desky. + to vypadá že všechno ostatní je otestováno a funguje
 
 Ztrácíš &#39;&#39;1 život&#39;&#39;.
 
